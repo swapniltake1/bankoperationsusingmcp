@@ -57,8 +57,8 @@ It is primarily intended for **practical experimentation, testing, and data oper
 1. **Clone the repository:**
 
 ```bash
-git clone https://github.com/<your-username>/bank-demo.git
-cd bank-demo
+git clone https://github.com/swapniltake1/bankoperationsusingmcp.git
+cd bankoperationsusingmcp
 ````
 
 2. **Set up the MySQL database:**
