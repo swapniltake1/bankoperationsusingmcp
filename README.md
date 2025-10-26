@@ -1,14 +1,14 @@
-# Bank Data Operations with MCP 
+# Bank Demo Application for MCP Operations
 
-A Spring Boot-based banking application demonstrating RESTful API integration, database interaction using JPA/Hibernate, and service-layer architecture. This project is intended as an educational mini-project for engineering students, focusing on Java development and database operations.
+This is a **Spring Boot-based banking application** created for **Massive Computational Practice (MCP)**. The project is designed to simulate real-world banking operations using demo datasets, focusing on **transaction processing, account management, and database interaction**.
 
 ---
 
 ## Table of Contents
 
-- [Project Overview](#project-overview)
-- [Technologies Used](#technologies-used)
-- [Features](#features)
+- [Overview](#overview)
+- [Technologies](#technologies)
+- [Key Functionalities](#key-functionalities)
 - [Setup and Installation](#setup-and-installation)
 - [Database Configuration](#database-configuration)
 - [Running the Application](#running-the-application)
@@ -19,35 +19,36 @@ A Spring Boot-based banking application demonstrating RESTful API integration, d
 
 ---
 
-## Project Overview
+## Overview
 
-This project simulates basic banking operations including:
+This application simulates typical banking operations to **practice MCP tasks**, including:
 
-- ATM transaction management
-- Customer account management
-- Transaction history retrieval
-- RESTful API exposure for banking operations
+- Managing ATM transactions
+- Customer account operations
+- Querying and processing transaction history
+- Handling bulk banking datasets
 
-The project follows Spring Boot best practices, layered architecture, and uses Spring Data JPA for database interactions.
+It is primarily intended for **practical experimentation, testing, and data operations**, rather than as a student mini-project.
 
 ---
 
-## Technologies Used
+## Technologies
 
 - **Backend:** Java 17, Spring Boot 3.5.7, Spring Data JPA, Hibernate ORM  
 - **Database:** MySQL 8.0  
+- **Connection Pool:** HikariCP  
 - **Build Tool:** Maven  
-- **Version Control:** Git, GitHub  
-- **Others:** HikariCP connection pool, Lombok for boilerplate reduction
+- **Version Control:** Git / GitHub  
+- **Others:** Lombok for reducing boilerplate
 
 ---
 
-## Features
+## Key Functionalities
 
-- ATM transaction history retrieval (with date range filtering)
-- Secure customer account management
-- CRUD operations for banking entities
-- RESTful APIs with JSON responses
+- Retrieve ATM transaction history with date filters  
+- CRUD operations for accounts and transactions  
+- Perform bulk operations on banking datasets  
+- RESTful APIs for transaction processing and account management  
 
 ---
 
@@ -60,15 +61,13 @@ git clone https://github.com/<your-username>/bank-demo.git
 cd bank-demo
 ````
 
-2. **Set up the database:**
-
-* Install MySQL and create a database:
+2. **Set up the MySQL database:**
 
 ```sql
 CREATE DATABASE bank_demo;
 ```
 
-* Update `application.properties` with your database credentials:
+* Update `application.properties`:
 
 ```properties
 spring.datasource.url=jdbc:mysql://localhost:3306/bank_demo
@@ -85,10 +84,11 @@ mvn clean install
 mvn spring-boot:run
 ```
 
-4. **Access the application:**
+4. **Access the API:**
 
-* API base URL: `http://localhost:8080`
-* Example endpoint: `GET /api/atm/transactions?startDate=2025-01-01T00:00:00&endDate=2025-12-31T23:59:59`
+* Base URL: `http://localhost:8080`
+* Example endpoint:
+  `GET /api/atm/transactions?startDate=2025-01-01T00:00:00&endDate=2025-12-31T23:59:59`
 
 ---
 
@@ -104,7 +104,7 @@ bank-demo/
 │   └── DemoApplication.java
 ├── src/main/resources/
 │   ├── application.properties
-│   └── data.sql          # Optional seed data
+│   └── data.sql          # Optional demo data
 └── pom.xml               # Maven dependencies
 ```
 
@@ -112,24 +112,24 @@ bank-demo/
 
 ## Future Enhancements
 
-* JWT-based authentication and authorization
-* Integration with external banking APIs
-* Frontend interface using React.js or Angular
-* Unit and integration testing with JUnit and Mockito
+* Integration with live banking datasets for stress testing
+* Implement multi-threaded transaction processing
+* Add detailed logging and monitoring
+* Unit and integration testing for large-scale datasets
 
 ---
 
 ## Author
 
 **Swapnil Take**
-Application Developer | Java & Spring Boot Enthusiast
-[LinkedIn](https://www.linkedin.com/in/swapniltake) | [GitHub](https://github.com/<your-username>)
+Application Developer | Java & Spring Boot | MCP Practice Projects
+[GitHub](https://github.com/<your-username>) | [LinkedIn](https://www.linkedin.com/in/swapniltake)
 
 ---
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
-```
+
 
